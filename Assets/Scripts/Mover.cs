@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    //Variables
+    float flt_xValue = 0f;
+    float flt_yValue = 0.1f;
+    float flt_zValue = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Start off by moving 1 space first
-        transform.Translate(1f, 0f, 0f);
+      
     }
 
     // Update is called once per frame
     void Update()
     {
         //allow us to change the transform value every frame
-        transform.Translate(0.01f, 0f, 0f);
+        transform.Translate(flt_xValue, flt_yValue, flt_zValue);
     }
 }
