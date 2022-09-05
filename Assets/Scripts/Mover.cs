@@ -10,11 +10,25 @@ public class Mover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        CheckForPlayerMovement();
+    }
+
+    //print instructions to the consol about how to play the game
+    void PrintInstructions()
+    {
+        Debug.Log("Welcome to the game");
+        Debug.Log("Use WSAD or arrow keys to move your character");
+        Debug.Log("Dont hit the walls");
+    }
+
+    //get inputs for player movement
+    void CheckForPlayerMovement()
     {
         //Get input for x, and z variables,make it frame rate independent, and give it the correct speed
         float flt_xValue = Input.GetAxis("Horizontal") * Time.deltaTime * flt_moveSpeed;
