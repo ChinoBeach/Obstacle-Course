@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
+    //X seconds that we are waitng for
+    [SerializeField] float flt_waitTime = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +16,11 @@ public class Dropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Print to console the time passed.
-        Debug.Log(Time.time);
+        //if more than X seconds have passed
+        if(Time.time > flt_waitTime)
+        {
+            Debug.Log(flt_waitTime + " seconds have elapsed");
+        }
         
     }
 }
